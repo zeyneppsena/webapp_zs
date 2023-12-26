@@ -1,0 +1,304 @@
+﻿/* Enhanced Navbar CSS */
+.navbar-nav .nav-item .nav-link {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em; /* Adjusted font size */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+    .navbar-nav .nav-item .nav-link:hover,
+    .navbar-nav .nav-item .nav-link:focus {
+        color: #0056b3; /* Slightly darker blue for better visibility */
+        text-decoration: none;
+        transform: scale(1.05); /* Slight increase in size on hover */
+    }
+
+.navbar-nav .nav-item .form-inline .nav-link {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+    .navbar-nav .nav-item .form-inline .nav-link:hover {
+        color: #0056b3;
+        text-decoration: underline;
+        transform: scale(1.05);
+    }
+
+.navbar-nav .nav-item {
+    padding-right: 10px; /* Added right margin for spacing between nav items */
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin-bottom: 15px; /* Increased spacing for touch devices */
+    }
+}
+
+/* Enhanced Footer CSS */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e9ecef; /* Lighter shade for a modern look */
+    color: #333;
+    text-align: center;
+    padding: 15px 0; /* Increased padding for better aesthetics */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+/* Updated Table Style */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: Arial, sans-serif;
+    min-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+}
+
+    .table th,
+    .table td {
+        padding: 12px 15px;
+    }
+
+    .table th {
+        background-color: #6c757d;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .table tr {
+        border-bottom: 1px solid #dee2e6;
+    }
+
+        .table tr:hover {
+            background-color: #f1f3f5;
+        }
+
+        .table tr:last-of-type {
+            border-bottom: 2px solid #6c757d;
+        }
+
+/* Updated Action Link Styles */
+.action-link {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 7px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-link {
+    background-color: #0066cc; /* Cooler shade of blue */
+}
+
+.details-link {
+    background-color: #138496; /* Cooler shade of teal */
+}
+
+.delete-link {
+    background-color: #b21f3d; /* Cooler shade of red */
+}
+
+.action-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    color:blanchedalmond
+}
+
+.action-form {
+    display: inline; /* Ensure the form is displayed inline with the links */
+}
+
+    .action-form button {
+        padding: 5px 12px;
+        margin-right: 10px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+    }
+
+        .action-form button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+
+.action-link.cart-link {
+    background-color: #ffc107; /* Yellow color */
+}
+
+
+
+.action-link.buy-link {
+    background-color: #00b894;
+}
+
+
+.action-link.create-button {
+    background-color: #00b894;
+}
+.back-button {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+    .back-button:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+.action-link i.fa-arrow-left {
+    margin-right: .3em;
+}
+/* Style the form with a grey border */
+form {
+    border: 1px solid #bfbfbf; /* grey border */
+    padding: 15px;
+    border-radius: 5px; /* slightly rounded corners */
+    background-color: #f9f9f9; /* light grey background */
+}
+
+/* Keep the rest of the styles as previously defined */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label.control-label {
+    display: block;
+    margin-bottom: .2rem;
+}
+
+input.form-control {
+    width: 100%;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin-bottom: .5rem; /* Spacing after each input */
+}
+
+    input.form-control:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+    }
+
+/* ... rest of the styles ...
+
+
+/* Base styles for overall consistency */
+
+.details-container {
+    background: #ffffff; /* fallback for older browsers */
+    background: -webkit-linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%);
+    background: linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%);
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+}
+
+    /* Subtle hover effect */
+    .details-container:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+/* Style the title */
+h1 {
+    color: #333;
+    margin-bottom: 1em;
+}
+
+/* Styling for the description list */
+dl.row {
+    margin: 0;
+    padding: 0;
+}
+
+dt {
+    color: #7a7a7a;
+    width: 25%;
+    padding: 10px 0;
+    clear: both;
+    text-align: left;
+    font-weight: normal;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+dd {
+    width: 75%;
+    padding: 10px 0;
+    margin: 0;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+/* Clear floats after dl */
+dl:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container-file {
+    display: flex; /* Flexbox konteynerini etkinleştir */
+    justify-content: center; /* Yatayda ortala */
+}
+
+.file-upload-btn {
+    display: inline-block;
+    padding: 12px 24px; /* Daha büyük buton */
+    cursor: pointer;
+    background-color: #007bff; /* Parlak mavi arka plan */
+    color: white; /* Beyaz yazı rengi */
+    border-radius: 5px; /* Yuvarlak köşeler */
+    font-size: 16px; /* Büyük yazı boyutu */
+    border: none; /* Kenarlık yok */
+    box-shadow: 0 2px 4px rgba(0, 123, 255, .5); /* Gölge efekti */
+    transition: background-color 0.3s; /* Renk değişimi animasyonu */
+}
+
+    .file-upload-btn:hover {
+        background-color: #0056b3; /* Düğme üzerine gelindiğinde renk değişimi */
+    }
+
+    .file-upload-btn:active {
+        background-color: #004085; /* Düğmeye basıldığında renk değişimi */
+    }
+
+    .file-upload-btn:focus {
+        outline: none; /* Odaklanma çerçevesini kaldır */
+    }
+
+
+.form-right-align {
+    text-align: right; /* Butonu sağa hizalar */
+}
+
+/* Opsiyonel: Formun tam genişlik almasını sağlamak için */
+.form-full-width {
+    width: 100%; /* Div'in tam genişlik almasını sağlar */
+}
+

@@ -1,0 +1,40 @@
+﻿@model webapp_ZS.Models.ArtworkTag
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Düzenle</h2>
+
+<h4>ArtworkTag</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="tagName" class="control-label"></label>
+                <input asp-for="tagName" class="form-control" />
+                <span asp-validation-for="tagName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="artworkId" class="control-label"></label>
+                <select asp-for="artworkId" class="form-control" asp-items="ViewBag.artworkId"></select>
+                <span asp-validation-for="artworkId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+        <a asp-action="Index" class="action-link back-button"><i class="fas fa-arrow-left"></i> Geri</a>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

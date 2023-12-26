@@ -1,0 +1,85 @@
+﻿@model webapp_ZS.Models.Artworks
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Detay Bilgiler</h3>
+
+<div class="container">
+    <h5>Sanat Eserleri</h5>
+    <hr />
+
+    <div class="row">
+        <!-- İlk Sütun: Diğer Bilgiler -->
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.artworksName)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.artworksName)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.artworksCreationDate)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.artworksCreationDate)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.artworksMaterials)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.artworksMaterials)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.artworksDimensions)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.artworksDimensions)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.artworksDescripton)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.artworksDescripton)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.artworksStockQuantity)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.artworksStockQuantity)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Artists.artistName)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Artists.artistName)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Categories.categoryName)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Categories.categoryName)
+                </dd>
+            </dl>
+        </div>
+
+        <!-- İkinci Sütun: Resim -->
+        <div class="col-md-4">
+            @if (!string.IsNullOrEmpty(Model.DosyaAdi))
+            {
+                <img src="@("/resimler/" + Model.DosyaAdi)" alt="Sanat Eseri Resmi" style="width: 350px; height: 350px; ">
+            }
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="action-link back-button"><i class="fas fa-arrow-left"></i> Geri</a>
+
+    @if (User.IsInRole("administrator"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model.artworksId" class="action-link edit-link"><i class="fas fa-pencil-alt"></i> Düzenle</a>
+    }
+</div>

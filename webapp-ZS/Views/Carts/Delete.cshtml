@@ -1,0 +1,50 @@
+﻿@model webapp_ZS.Models.Cart
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Sil</h3>
+
+<h3 style="color: #ff0000;">Bu Kaydı Silmek İstediğinizden Emin Misiniz?</h3>
+
+<div>
+    <h5>Sepet</h5>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cartTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cartTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cartPiece)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cartPiece)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cartTotalAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cartTotalAmount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.artworks)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.artworks.artworksName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+
+
+    </form>
+
+    <a asp-action="Index" class="action-link back-button"><i class="fas fa-arrow-left"></i> Geri</a>
+
+</div>

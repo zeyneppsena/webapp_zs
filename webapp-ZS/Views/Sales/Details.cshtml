@@ -1,0 +1,63 @@
+@model webapp_ZS.Models.Sale
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Detay Bilgiler</h3>
+
+<div>
+    <h5>Sipariş</h5>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.customerName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.customerName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.saleCity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.saleCity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.saleAdress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.saleAdress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.artworks.artworksName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.artworks.artworksName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cartPiece)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cartPiece)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cartTotalAmount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cartTotalAmount)
+        </dd>
+   
+    </dl>
+</div>
+<div>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <a asp-action="Index2" asp-route-id="@Model.Id" class="action-link back-button"><i class="fas fa-arrow-left"></i> Geri</a>
+    }
+    else 
+    {
+        <a asp-action="Index" class="action-link back-button"><i class="fas fa-arrow-left"></i> Geri</a>
+    }
+
+
+</div>

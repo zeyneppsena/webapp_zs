@@ -1,0 +1,96 @@
+﻿body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.admin-main {
+    padding: 20px;
+}
+
+.admin-header {
+    background-color: lightpink;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-item {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+    .dashboard-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .dashboard-item h3 {
+        margin: 0 0 10px 0;
+        color: #007bff;
+        font-size: 20px;
+    }
+
+.admin-content {
+    margin-top: 30px;
+}
+
+.statistic-box {
+    background: #e7e7e7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+    .statistic-box h4 {
+        margin: 0;
+        color: #555;
+    }
+
+    .statistic-box p {
+        font-size: 28px;
+        color: #007bff;
+        margin: 5px 0 0;
+    }
+
+/* Yeni görsel öğeler için ekstra stiller */
+.extra-info {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+    .extra-info h4 {
+        color: #444;
+    }
+
+.news-update {
+    list-style: none;
+    padding: 0;
+}
+
+    .news-update li {
+        margin-bottom: 10px;
+    }
+
+        .news-update li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+            .news-update li a:hover {
+                text-decoration: underline;
+            }

@@ -1,0 +1,101 @@
+/* Temel HTML Stili */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+/* Body Stili */
+body {
+    margin: 0; /* Kenar boşluğunu sıfırlar */
+    padding: 0; /* İç boşluğunu sıfırlar */
+    font-family: Arial, sans-serif; /* Varsayılan yazı tipi */
+    background-color: #f8f9fa; /* Arka plan rengi */
+    margin-bottom: 60px; /* Altta 60px boşluk bırakır */
+}
+
+/* Ana Sayfa Arka Plan Stili */
+.homepage-background {
+    background-image: url('home.webp'); /* Arka plan resmi */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Tam ekran yüksekliği */
+}
+
+/* İçerik Stili */
+.content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white; /* İçerik rengi */
+    padding: 15px; /* İçerik etrafında boşluk */
+    background-color: rgba(0, 0, 0, 0.4); /* Şeffaf gri arka plan */
+}
+
+
+/* H1 Stili */
+h1 {
+    font-size: 2.7rem; /* Yazı boyutu */
+    margin-bottom: 0.5em; /* Altında boşluk */
+}
+
+/* P Stili */
+p {
+    font-size: 2rem; /* Yazı boyutu */
+    margin-top: 0; /* Üstünde boşluk yok */
+}
+
+
+
+
+
+
+
+/* Style for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+    .table th,
+    .table td {
+        padding: 12px 15px;
+    }
+
+    .table th {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .table tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .table tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .table tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+/* Style for the links */
+a {
+    color: #009879;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+

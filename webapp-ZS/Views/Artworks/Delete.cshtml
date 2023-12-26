@@ -1,0 +1,88 @@
+﻿@model webapp_ZS.Models.Artworks
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Sil</h3>
+
+<h5 style="color: #ff0000;">Bu Kaydı Silmek İstediğinizden Emin Misiniz?</h5>
+
+<div>
+    <h5>Sanat Eserleri</h5>
+    <hr />
+    <div class="row">
+        <!-- İlk Sütun: Diğer Bilgiler -->
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.artworksName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.artworksName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.artworksCreationDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.artworksCreationDate)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.artworksMaterials)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.artworksMaterials)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.artworksDimensions)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.artworksDimensions)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.artworksDescripton)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.artworksDescripton)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.artworksStockQuantity)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.artworksStockQuantity)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Artists)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Artists.Id)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Categories)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Categories.Id)
+                </dd>
+            </dl>
+        </div>
+
+        <!-- İkinci Sütun: Resim -->
+        <div class="col-md-4">
+            @if (!string.IsNullOrEmpty(Model.DosyaAdi))
+            {
+                <img src="@("/resimler/" + Model.DosyaAdi)" alt="Sanat Eseri Resmi" style="width: 350px; height: 350px; ">
+            }
+        </div>
+    </div>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="artworksId" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+
+
+</form>
+
+<a asp-action="Index" class="action-link back-button"><i class="fas fa-arrow-left"></i> Geri</a>
+
+        </div>

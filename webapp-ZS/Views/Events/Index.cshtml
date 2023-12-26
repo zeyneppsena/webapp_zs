@@ -1,0 +1,63 @@
+﻿@model IEnumerable<webapp_ZS.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Etkinlikler</h3>
+
+@if (User.IsInRole("administrator"))
+{
+    <p>
+        <a asp-action="Create" class=" action-link create-button"><i class="fas fa-plus"></i> Ekle</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.eventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artists.artistName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artists.artistName)
+                </td>
+                @if (User.IsInRole("administrator"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="action-link edit-link"><i class="fas fa-pencil-alt"></i> Düzenle</a>
+
+                        <a asp-action="Details" asp-route-id="@item.Id" class="action-link details-link"><i class="fas fa-eye"></i> Detay</a>
+
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="action-link delete-link"><i class="fas fa-trash"></i> Sil</a>
+                    </td>
+
+                }
+            </tr>
+        }
+    </tbody>
+</table>

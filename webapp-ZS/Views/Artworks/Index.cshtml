@@ -1,0 +1,102 @@
+﻿@model IEnumerable<webapp_ZS.Models.Artworks>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Sanat Eserleri</h3>
+
+@if (User.IsInRole("administrator"))
+{
+    <p>
+        <a asp-action="Create" class=" action-link create-button"><i class="fas fa-plus"></i> Ekle</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.artworksName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.artworksPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.artworksStockQuantity)
+            </th>
+            <th>Resim</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artists.artistName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories.categoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.artworksName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.artworksPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.artworksStockQuantity)
+                </td>
+                <td>
+                    <img src="/resimler/@item.DosyaAdi" style="max-height:50px" onclick="enlargeImage(this)">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artists.artistName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categories.categoryName)
+                </td>
+
+
+
+
+                <td>
+                    @if (User.IsInRole("administrator"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.artworksId" class="action-link edit-link"><i class="fas fa-pencil-alt"></i> Düzenle</a>
+
+                    }
+
+                    <a asp-action="Details" asp-route-id="@item.artworksId" class="action-link details-link"><i class="fas fa-eye"></i> Detay</a>
+                    @if (User.IsInRole("administrator"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.artworksId" class="action-link delete-link"><i class="fas fa-trash"></i> Sil</a>
+                    }
+
+                    <form asp-action="AddCart" method="post" class="action-form">
+                        <input type="hidden" name="artworksId" value="@item.artworksId" />
+                        <button type="submit" class="action-link cart-link" aria-label="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i> Sepete Ekle
+                        </button>
+                    </form>
+                </td>
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+function enlargeImage(img) {
+    // Resmin orijinal boyutunu kontrol et
+    if (img.style.transform === "scale(5)") {
+        img.style.transform = "scale(1)"; // Eğer zaten büyütülmüşse, normal boyutuna döndür
+    } else {
+        img.style.transform = "scale(5)"; // Resmi büyüt
+    }
+}
+</script>
+

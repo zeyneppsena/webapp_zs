@@ -1,0 +1,130 @@
+﻿@model webapp_ZS.Models.Artworks
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Yeni</h3>
+
+<h5>Sanat Eserleri</h5>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <!-- İlk Sütun -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="artworksName" class="control-label"></label>
+                        <input asp-for="artworksName" class="form-control" />
+                        <span asp-validation-for="artworksName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="artworksCreationDate" class="control-label"></label>
+                        <input asp-for="artworksCreationDate" class="form-control" />
+                        <span asp-validation-for="artworksCreationDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="artworksMaterials" class="control-label"></label>
+                        <input asp-for="artworksMaterials" class="form-control" />
+                        <span asp-validation-for="artworksMaterials" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="artworksDimensions" class="control-label"></label>
+                        <input asp-for="artworksDimensions" class="form-control" />
+                        <span asp-validation-for="artworksDimensions" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="artworksDescripton" class="control-label"></label>
+                        <input asp-for="artworksDescripton" class="form-control" rows="2" />
+                        <span asp-validation-for="artworksDescripton" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+
+
+                    <div class="form-group">
+                        <label asp-for="artworksPrice" class="control-label"></label>
+                        <input asp-for="artworksPrice" class="form-control" />
+                        <span asp-validation-for="artworksPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="artworksStockQuantity" class="control-label"></label>
+                        <input asp-for="artworksStockQuantity" class="form-control" />
+                        <span asp-validation-for="artworksStockQuantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Artists.artistName" class="control-label"></label>
+                        <select asp-for="artistId" class="form-control" asp-items="ViewBag.artistId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Categories.categoryName" class="control-label"></label>
+                        <select asp-for="categoriesId" class="form-control" asp-items="ViewBag.categoriesId"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+      
+                    <dl class="row">
+                        <!-- Mevcut Bilgiler -->
+                        <!-- [Diğer bilgilerin kodları] -->
+                        <!-- Dosya Yükleme ve Önizleme Alanı -->
+                        <div class="container-file">
+                            <label for="dosyaYukle" class="file-upload-btn">Dosya Yükle</label>
+                            <input asp-for="Dosya" type="file" id="dosyaYukle" onchange="previewFile()" style="display: none;">
+                        </div>
+
+
+                        <!-- Önizleme Resmi -->
+                        <div class="form-group" id="previewContainer">
+                            <img id="previewImage" src="#" alt="Yüklenen resmin önizlemesi" style="max-width: 350px; height: 350px; display: none; ">
+                        </div>
+
+                    </dl>
+                </div>
+                <div class="col-md-4">
+
+        
+                    <div class="form-group">
+                        <input type="submit" value="Kaydet" class="btn btn-primary" />
+                    </div>
+                </div>
+
+</form>
+    </div>
+</div>
+
+<div>
+        <a asp-action="Index" class="action-link back-button"><i class="fas fa-arrow-left"></i> Geri</a>
+
+</div>
+
+<script>// Resim Önizleme Fonksiyonu
+    function previewFile() {
+        var preview = document.getElementById('previewImage');
+        var file = document.getElementById('dosyaYukle').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+            preview.style.display = 'block';
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+            preview.style.display = 'none';
+        }
+    }</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<webapp_ZS.Models.Cart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Sepet</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cartPiece)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cartTotalAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.artworks.artworksName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cartPiece)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cartTotalAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.artworks.artworksName)
+            </td>
+
+
+            <td>
+
+                <a asp-action="Edit" asp-route-id="@item.Id" class="action-link edit-link"><i class="fas fa-pencil-alt"></i> Düzenle</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="action-link details-link"><i class="fas fa-eye"></i> Detay</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="action-link delete-link"><i class="fas fa-trash"></i> Sil</a>
+
+                <form asp-action="AddSales" method="post" class="action-form">
+                    <input type="hidden" name="id" value="@item.Id" />
+                    <button type="submit" class="action-link buy-link" aria-label="Satın Al">
+                        <i class="fas fa-dollar-sign"></i> Satın Al 
+                    </button>
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="~/css/admin-panel.css">
+</head>
+<body>
+    <div class="admin-main">
+        <div class="admin-header">
+            <h1>Yönetici Paneline Hoş Geldiniz</h1>
+        </div>
+        <div class="admin-dashboard">
+            <!-- İstatistik Kutuları -->
+            <div class="dashboard-item statistic-box">
+                <h4>Kullanıcı Sayısı</h4>
+                <p>@ViewBag.UserCount</p>
+            </div>
+            <div class="dashboard-item statistic-box">
+                <h4>Satış Sayısı</h4>
+                <p>@ViewBag.SalesCount</p>
+            </div>
+            <div class="dashboard-item statistic-box">
+                <h4>Sepet Sayısı</h4>
+                <p>@ViewBag.CartCount</p>
+            </div>
+            <div class="dashboard-item statistic-box">
+                <h4>Ürün Sayısı</h4>
+                <p>@ViewBag.ProductCount</p>
+            </div>
+
+        </div>
+        <div class="admin-content">
+            <!-- Dinamik yönetici içeriği buraya gelecek -->
+        </div>
+    </div>
+
+</body>
+</html>

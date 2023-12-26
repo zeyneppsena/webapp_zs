@@ -1,0 +1,52 @@
+﻿/* Style for the overall layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Style for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+    .table th,
+    .table td {
+        padding: 12px 15px;
+    }
+
+    .table th {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .table tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .table tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .table tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+/* Style for the links */
+a {
+    color: #009879;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
